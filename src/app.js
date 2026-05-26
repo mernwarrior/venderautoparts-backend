@@ -41,9 +41,8 @@ app.use("/admin/queues", bullBoardAdapter.getRouter());
 
 app.use(cors({
   origin: [
-    "https://raffle.co.za",
-    "https://admin.raffle.co.za",
-    "https://raffal-admin.vercel.app",
+    "https://www.venderautoparts.com/",
+    "https://adminvender.vercel.app",
     "https://raffal-frontend.vercel.app",
     "http://localhost:3000",
     "http://localhost:3001"
