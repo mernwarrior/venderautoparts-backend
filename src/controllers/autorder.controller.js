@@ -1,4 +1,4 @@
-import Order from '../models/autoOrder.js';
+import Order from '../models/autorder.js';
 
 // CREATE ORDER
 export const createOrder = async (req, res) => {

@@ -4,7 +4,7 @@ import {
   getAllOrders,
   getOrderById,
   updateOrderStatus
-} from '../controllers/autoOrder.Controller.js';
+} from '../controllers/autorder.controller.js';
 
 const router = express.Router();
 

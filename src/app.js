@@ -26,7 +26,7 @@ import { ExpressAdapter } from "@bull-board/express";
 import { raffleDrawQueue } from "./queues/raffleDraw.queue.js";
 import smtpSettingRoutes from "./routes/smtpSetting.routes.js";
 import productRoutes from "./routes/product.routes.js";
-import autorderRoutes from "./routes/autoOrder.routes.js";
+import autorderRoutes from "./routes/autorder.routes.js";
 import contactRoutes from "./routes/contact.routes.js";
 const app = express();
 
