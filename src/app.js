@@ -39,20 +39,20 @@ createBullBoard({
 });
 app.use("/admin/queues", bullBoardAdapter.getRouter());
 
-app.use(cors({
+const corsOptions = {
   origin: [
-    "https://www.venderautoparts.com",
+    "http://localhost:3000",
+    "http://localhost:3001",
     "https://adminvender.vercel.app",
     "https://raffal-frontend.vercel.app",
-    "http://localhost:3000",
-    "http://localhost:3001"
+    "https://www.venderautoparts.com"
   ],
-  credentials: true,
-  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
+  credentials: true
+};
 
-app.options(/.*/, cors());
+app.use(cors(corsOptions));
+
+// app.options(/.*/, cors());
 // app.options("*", cors());
 // app.options("/{*splat}", cors());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
