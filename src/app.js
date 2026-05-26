@@ -47,11 +47,14 @@ app.use(cors({
     "http://localhost:3000",
     "http://localhost:3001"
   ],
-  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
+  methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
-app.options("/{*splat}", cors());
+
+app.options(/.*/, cors());
+// app.options("*", cors());
+// app.options("/{*splat}", cors());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 app.use(express.json());
