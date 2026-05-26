@@ -39,19 +39,18 @@ createBullBoard({
 });
 app.use("/admin/queues", bullBoardAdapter.getRouter());
 
-// app.use(cors({
-//   origin: [
-//     "https://www.venderautoparts.com",
-//     "https://adminvender.vercel.app",
-//     "https://raffal-frontend.vercel.app",
-//     "http://localhost:3000",
-//     "http://localhost:3001"
-//   ],
-//   methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
-//   allowedHeaders: ["Content-Type", "Authorization"],
-//   credentials: true,
-// }));
-app.options("*", cors());
+app.use(cors({
+  origin: [
+    "https://www.venderautoparts.com",
+    "https://adminvender.vercel.app",
+    "https://raffal-frontend.vercel.app",
+    "http://localhost:3000",
+    "http://localhost:3001"
+  ],
+  methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
+}));
 app.options("/{*splat}", cors());
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
