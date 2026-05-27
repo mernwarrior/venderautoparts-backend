@@ -25,8 +25,9 @@ import { BullMQAdapter } from "@bull-board/api/bullMQAdapter";
 import { ExpressAdapter } from "@bull-board/express";
 import { raffleDrawQueue } from "./queues/raffleDraw.queue.js";
 import smtpSettingRoutes from "./routes/smtpSetting.routes.js";
-import productRoutes from "./routes/product.routes.js";
+
 import autorderRoutes from "./routes/autorder.routes.js";
+import productRoutes from "./routes/product.routes.js"
 import contactRoutes from "./routes/contact.routes.js";
 const app = express();
 
@@ -63,7 +64,9 @@ app.use(cookieParser());
 app.use(express.json());
 app.use(passport.initialize());
 // app.use(passport.session());
-
+app.get("/test", (req, res) => {
+  res.json({ ok: true, msg: "NEW DEPLOY WORKING" });
+});
 
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
